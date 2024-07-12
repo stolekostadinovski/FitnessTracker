@@ -25,10 +25,10 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:latest .
-          docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:latest ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:${{ github.sha }}
+          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/fitness:latest .
+          docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/fitness:latest ${{ secrets.DOCKER_HUB_USERNAME }}/fitness:${{ github.sha }}
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:latest
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/fitness:latest
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/fitness:${{ github.sha }}
